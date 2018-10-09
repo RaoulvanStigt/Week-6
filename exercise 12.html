@@ -16,25 +16,25 @@
             // Jou instructies volgen hier
 
             for(var i=9; i > 0; i--){
+                robotArm.grab();
 
-                            robotArm.grab();
+                if(robotArm.scan() == "red"){
+                    for(var k=0; k<i; k++){
+                        robotArm.moveRight();
+                    }
 
-                            if(robotArm.scan() == "red"){
-                                for(var k=0; k<i; k++){
-                                robotArm.moveRight();
-                                }
+                robotArm.drop();
 
-                                robotArm.drop();
-
-                                for(var j=0; j<(i - 1); j++){
-                                robotArm.moveLeft();
-                                }
-                            }
-                            else{
-                                robotArm.drop();
-                                robotArm.moveRight();
-                                }
-                            }
+                    for(var j=0; j<(i - 1); j++){
+                    robotArm.moveLeft();
+                    }
+                }
+                
+                else{
+                    robotArm.drop();
+                    robotArm.moveRight();
+                }
+            }
             // De door jou opgegeven instructies uitvoeren
 
             robotArm.run();

@@ -16,12 +16,15 @@
             robotArm.grab();
             for (w=1; w <= 7; w++) {
               robotArm.grab();
-            for (q=1; q <= 8; q++) {
-              robotArm.moveRight();
+              
+              for (q=1; q <= 8; q++) {
+                robotArm.moveRight();
               }
+              
               robotArm.drop();
+              
               for (z=1; z <= 8; z++) {
-              robotArm.moveLeft();
+                robotArm.moveLeft();
               }
             }
 

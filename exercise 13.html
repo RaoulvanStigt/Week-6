@@ -1,7 +1,7 @@
 <html>
     <body>
         <canvas id="canvas" width="800" height="600"></canvas>
-        <script src="./robotarm.js"></script>
+        <script src="./robot-arm.js"></script>
         <script>
             // Robotarm bibliotheek inladen
             var canvas = document.getElementById("canvas");
@@ -22,8 +22,9 @@
                 loop =1
             }
             else { 
-                for (var j = 0; j < getal; j++) 
+                for (var j = 0; j < getal; j++) {
                     robotArm.moveRight();
+                }
             }
 
             getal = getal+1
@@ -33,6 +34,7 @@
                 robotArm.moveLeft();
             }
         }
+
 
             // De door jou opgegeven instructies uitvoeren
             robotArm.run();

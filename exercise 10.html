@@ -12,18 +12,21 @@
             
             // Jou instructies volgen hier
             var w = 9
+
             for (i = 0; i < 5; i++) {
-            robotArm.grab();
-            for (q = 0; q < w; q++) {
-                robotArm.moveRight();
+                    robotArm.grab();
+                for (q = 0; q < w; q++) {
+                        robotArm.moveRight();
+                }
+                var w = w-1
+
+                robotArm.drop();
+
+                for (z = 0; z < w; z++) {
+                    robotArm.moveLeft();
+                }
+                var w = w-1
             }
-            var w = w-1
-            robotArm.drop();
-            for (z = 0; z < w; z++) {
-            robotArm.moveLeft();
-            }
-            var w = w-1
-        }
 
             
             // De door jou opgegeven instructies uitvoeren
